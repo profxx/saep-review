@@ -36,7 +36,18 @@ public class RecadoService {
         return recadoRepository.save(recadoAtual);
     }
 
-    
+    // Delete
+    public Boolean deleteById(Long id){
+        Recado recado = findById(id);
+        if (recado == null){
+            return false;
+        }else{
+            recadoRepository.deleteById(id);
+            return true;
+        }
+    }
+
+
 
 
 
